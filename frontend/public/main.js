@@ -3,7 +3,7 @@ const { app, BrowserWindow } = require('electron')
 const createWindow = () => {
   const mainWindow = new BrowserWindow({
     width: 1000,
-    height: 700,
+    height: 750,
     webPreferences: {      
       enableRemoteModule:true
     }
