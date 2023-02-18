@@ -165,18 +165,11 @@ const Signup = () => {
       </FormControl>
       <FormControl id="password" isRequired>
         <FormLabel>Confirm Password</FormLabel>
-        <InputGroup size="md">
           <Input
-            type={show ? "text" : "password"}
+            type="password"
             placeholder="Confirm password"
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
-          <InputRightElement width="4.5rem">
-            <Button h="1.75rem" size="sm" onClick={handleClick}>
-              {show ? "Hide" : "Show"}
-            </Button>
-          </InputRightElement>
-        </InputGroup>
       </FormControl>
       <FormControl id="pic">
         <FormLabel>Upload your Picture</FormLabel>
