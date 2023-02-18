@@ -20,15 +20,15 @@ app.get('/', (req, res) =>{
 
 app.use('/api/user', userRoutes);
 
-// app.get('/api/chat', (req, res) => {
-//     res.send(chats)
-// })
+app.get('/api/chat', (req, res) => {
+    res.send(chats)
+})
 
-// app.get('/api/chat/:id', (req, res) => {
-//     console.log(req.params.id)
-//     const singleChat = chats.find( (c) => c._id === req.params.id);
-//     res.send(singleChat);
-// })
+app.get('/api/chat/:id', (req, res) => {
+    console.log(req.params.id)
+    const singleChat = chats.find( (c) => c._id === req.params.id);
+    res.send(singleChat);
+})
 
 const PORT = process.env.PORT || 4000
 app.listen(PORT, console.log(`server started on PORT ${PORT}`.yellow));
