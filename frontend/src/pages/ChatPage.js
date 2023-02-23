@@ -1,25 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import SideDrawer from "../components/miscellaneous/SideDrawer";
+import MyChats from "../components/MyChats";
+import ChatBox from "../components/ChatBox";
+import { ChatState } from "../context/ChatProvider";
 
 const ChatPage = () => {
+  const { user } = ChatState();
 
-    const [chats, setChats] = useState([])
+  return (
+    <div style={{ width: "100%" }}>
+      {user && <SideDrawer />}
+      <Row>
+        <Col>{user && <MyChats />}</Col>
+        <Col>{user && <ChatBox />}</Col>
+      </Row>
+    </div>
+  );
+};
 
-    const fetchChats = async() => {
-        const {data} = await axios.get('/api/chat')
-        setChats(data);
-        console.log(data);
-    };
-
-    useEffect(() => {
-        fetchChats();
-    }, [])
-
-    return (
-        <div>
-            This is the main chat Page
-        </div>
-    )
-}
-
-export default ChatPage
+export default ChatPage;
