@@ -8,6 +8,7 @@ const createWindow = () => {
       enableRemoteModule:true
     }
   })
+  // mainWindow.webContents.openDevTools()
 
   mainWindow.loadURL('http://localhost:3000')
 }

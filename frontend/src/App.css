@@ -17,3 +17,12 @@
 .Form-img{
   width: 100%;
 }
+.dropdown-toggle-notification > .dropdown-toggle::after {
+  display: none;
+}
+
+.user-list:hover{
+  background-color: #969696 !important;
+  color: #fff !important;
+  cursor: pointer;
+}
